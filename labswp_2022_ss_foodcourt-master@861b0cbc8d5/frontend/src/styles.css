@@ -1,0 +1,385 @@
+:root {
+    --foodcourt-green: #083920;
+}
+
+.navbar {
+    background-color: var(--foodcourt-green) !important;
+}
+
+:focus {
+    background-color: transparent !important;
+}
+
+.login-button:hover {
+    background-color: #d8d8d8 !important;
+}
+
+.logo:hover {
+    background-color: transparent !important;
+}
+
+.logo:focus {
+    background-color: transparent !important;
+}
+
+.navbar-menu.is-active {
+    position: absolute;
+    width: 100%;
+}
+
+.food-court-title {
+    font-size: calc(1em + 15vmin);
+    font-weight: 900;
+    color: #3abb81;
+    line-height: 1.2;
+
+    --x-offset: -0.0625em;
+    --y-offset: 0.0625em;
+    --stroke: 0.025em;
+    --background-color: #083920;
+    --stroke-color: #3ABB81;
+
+    text-shadow:
+
+        var(--x-offset) var(--y-offset) 0px var(--background-color),
+
+        calc(var(--x-offset) - var(--stroke)) calc(var(--y-offset) + var(--stroke)) 0px var(--stroke-color);
+
+}
+
+@media only screen and (max-width: 1023px) {
+
+    .navbar-item.has-dropdown .navbar-dropdown {
+        display: none;
+    }
+
+    .navbar-item.has-dropdown.is-active .navbar-dropdown {
+        display: block;
+    }
+}
+
+
+@media only screen and (max-width: 1000px) {
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    .table tbody tr:last-child td,
+    .table tbody tr:last-child th {
+        border-bottom-width: thin !important;
+    }
+
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        margin-left: 150px;
+        text-align: right !important;
+    }
+
+    td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        margin-left: -150px;
+        text-align: left;
+    }
+
+    .hiddenMobile {
+        display: none;
+    }
+
+
+    #table-speisekarte td:nth-of-type(1):before {
+        content: "Beschreibung:";
+    }
+
+    #table-speisekarte td:nth-of-type(2):before {
+        content: "Bild:";
+    }
+
+    #table-speisekarte td:nth-of-type(9):before {
+        content: "Typ:";
+    }
+
+    #table-speisekarte td:nth-of-type(10):before {
+        content: "Allergene:";
+    }
+
+    #table-speisekarte td:nth-of-type(11):before {
+        content: "Stand:";
+    }
+
+    #table-speisekarte td:nth-of-type(8):before {
+        content: "Verfügbarkeit:";
+        color: hsl(0, 0%, 21%);
+    }
+
+    #table-speisekarte td:nth-of-type(7):before {
+        content: "Preis";
+        text-align: left !important;
+    }
+
+    #table-getränkekarte td:nth-of-type(1):before {
+        content: "Beschreibung:";
+    }
+
+    #table-getränkekarte td:nth-of-type(7):before {
+        content: "Typ:";
+    }
+
+    #table-getränkekarte td:nth-of-type(8):before {
+        content: "Stand:";
+    }
+
+    #table-getränkekarte td:nth-of-type(6):before {
+        content: "Verfügbarkeit:";
+        color: hsl(0, 0%, 21%);
+    }
+
+    #table-getränkekarte td:nth-of-type(5):before {
+        content: "Preis:";
+    }
+
+    #table-events td:nth-of-type(1):before {
+        content: "Beschreibung:";
+    }
+
+    #table-events td:nth-of-type(2):before {
+        content: "Start-Datum:";
+    }
+
+    #table-events td:nth-of-type(3):before {
+        content: "End-Datum:";
+    }
+
+    #table-administrators td:nth-of-type(1):before {
+        content: "Benutzername:";
+    }
+
+    #table-administrators td:nth-of-type(2):before {
+        content: "Aktionen:";
+    }
+
+    #table-restaurantowners td:nth-of-type(1):before {
+        content: "Stand:";
+    }
+
+    #table-restaurantowners td:nth-of-type(2):before {
+        content: "Vorname:";
+    }
+
+    #table-restaurantowners td:nth-of-type(3):before {
+        content: "Nachname:";
+    }
+
+    #table-restaurantowners td:nth-of-type(4):before {
+        content: "Aktionen:";
+    }
+
+    #table-speisekarte-verwaltung td:nth-of-type(1):before {
+        content: "Beschreibung:";
+    }
+
+    #table-speisekarte-verwaltung td:nth-of-type(2):before {
+        content: "Bild:";
+    }
+
+    #table-speisekarte-verwaltung td:nth-of-type(3):before {
+        content: "Typ:";
+    }
+
+    #table-speisekarte-verwaltung td:nth-of-type(4):before {
+        content: "Allergene:";
+    }
+
+    #table-speisekarte-verwaltung td:nth-of-type(5):before {
+        content: "Stand:";
+    }
+
+    #table-speisekarte-verwaltung td:nth-of-type(6):before {
+        content: "Preis:";
+    }
+
+    #table-speisekarte-verwaltung td:nth-of-type(7):before {
+        content: "Verfügbarkeit";
+        text-align: left !important;
+        color: hsl(0, 0%, 21%);
+    }
+
+    #table-speisekarte-verwaltung td:nth-of-type(8):before {
+        content: "Aktionen:";
+    }
+
+    #table-getränkekarte-verwaltung td:nth-of-type(1):before {
+        content: "Beschreibung:";
+    }
+
+    #table-getränkekarte-verwaltung td:nth-of-type(2):before {
+        content: "Typ:";
+    }
+
+    #table-getränkekarte-verwaltung td:nth-of-type(3):before {
+        content: "Getränkekarte:";
+    }
+
+    #table-getränkekarte-verwaltung td:nth-of-type(4):before {
+        content: "Preis:";
+    }
+
+    #table-getränkekarte-verwaltung td:nth-of-type(5):before {
+        content: "Verfügbarkeit:";
+        color: hsl(0, 0%, 21%);
+    }
+
+    #table-getränkekarte-verwaltung td:nth-of-type(6):before {
+        content: "Aktionen:";
+    }
+
+    #table-events-verwaltung td:nth-of-type(1):before {
+        content: "Event ID:";
+    }
+
+    #table-events-verwaltung td:nth-of-type(2):before {
+        content: "Beschreibung:";
+    }
+
+    #table-events-verwaltung td:nth-of-type(3):before {
+        content: "Start:";
+    }
+
+    #table-events-verwaltung td:nth-of-type(4):before {
+        content: "Ende:";
+    }
+
+    #table-events-verwaltung td:nth-of-type(5):before {
+        content: "Aktionen:";
+    }
+}
+
+
+
+@supports (text-shadow: 1px 1px 1px 1px black) {
+    .food-court-title {
+        text-shadow:
+
+            var(--x-offset) var(--y-offset) 0px 0px var(--background-color),
+
+            var(--x-offset) var(--y-offset) var(--stroke) 0px var(--stroke-color);
+
+    }
+}
+
+.button-tagesangebote {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border-width: 0px;
+}
+
+.button-tagesangebote:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--foodcourt-green);
+    border-radius: 10rem;
+    z-index: -2;
+}
+
+.button-tagesangebote:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #3ABB81;
+    transition: all 0.3s;
+    border-radius: 10rem;
+    z-index: -1;
+}
+
+.button-tagesangebote:hover {
+    color: #fff;
+}
+
+.button-tagesangebote:hover:before {
+    width: 100%;
+}
+
+.button-filter {
+    background-color: var(--foodcourt-green) !important;
+    color: #fff !important;
+}
+
+.tabs.is-toggle li.is-active a {
+    background-color: #3ABB81 !important;
+    border-color: #3ABB81 !important;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 600px) {
+    .typing {
+        width: 33ch;
+        animation: typing 2s steps(33), blink .5s step-end infinite alternate;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid;
+    }
+}
+
+.typing {
+    font-family: monospace;
+    font-size: 2em;
+}
+
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
