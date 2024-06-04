@@ -1,0 +1,6 @@
+{
+    "scripts": {
+        "railway-prebuild": "npm run build && npm install", // Note: This is combined and adjusted for Railway
+        "start": "node backend/index.js" // Assuming your server starts from an index.js file in the backend directory
+    }
+}
