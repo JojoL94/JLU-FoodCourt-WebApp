@@ -1,5 +1,5 @@
 import express from "express";
-import db from "./config/database.js"
+import db from "./config/database.js";
 import administratorRoutes from "./routes/administratorRoutes.js";
 import dishRoutes from "./routes/dishRoutes.js";
 import beverageRoutes from "./routes/beverageRoutes.js";
@@ -16,24 +16,29 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 dotenv.config();
 import authRoutes from "./routes/authRoutes.js";
-import * as https from 'https';
-import * as fs from 'fs';
+import bodyParser from 'body-parser';
+import { verifyToken } from './middleware/VerifyToken.js'; // Hier ist der korrekte Importpfad
+
 const port = process.env.PORT || 3010;
 const app = express();
 
-try {
-    await db.authenticate();
-    console.log('Database connected...');
-} catch (error) {
-    console.error('Connection error:', error);
-}
+// Datenbankverbindung herstellen
+(async () => {
+    try {
+        await db.authenticate();
+        console.log('Database connected...');
+    } catch (error) {
+        console.error('Connection error:', error);
+    }
+})();
 
+app.use(bodyParser.json());
 app.use(cors());
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 app.use(express.static('public'));
-app.use(express.json());
 app.use(cookieParser());
+
 app.use('/api/administrators', administratorRoutes);
 app.use('/api/dishes', dishRoutes);
 app.use('/api/beverages', beverageRoutes);
@@ -47,16 +52,15 @@ app.use('/api/allergen', allergentypeRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/auth', authRoutes);
 
-https
-    .createServer(
-        // Provide the private and public key to the server by reading each
-        // file's content with the readFileSync() method.
-        {
-            key: fs.readFileSync("key.pem"),
-            cert: fs.readFileSync("cert.pem"),
-        },
-        app
-    )
-    .listen(port, () => {
-        console.log(`Server running on ${port}`)
-    });
+// Öffentlicher Endpunkt
+app.get('/', (req, res) => {
+    res.send('Backend-Server läuft');
+});
+
+// Middleware für geschützte Routen
+app.use('/api/administrators', verifyToken);
+
+// Starten des Servers
+app.listen(port, () => {
+    console.log(`Server running on ${port}`);
+});
