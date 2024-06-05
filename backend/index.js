@@ -1,4 +1,6 @@
 import express from 'express';
+import fs from 'fs';
+import https from 'https';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
@@ -24,6 +26,7 @@ dotenv.config();
 const port = process.env.PORT || 3010;
 const app = express();
 
+// Datenbankverbindung herstellen
 (async () => {
     try {
         await db.authenticate();
@@ -61,7 +64,13 @@ app.get('/', (req, res) => {
 // Middleware für geschützte Routen
 app.use('/api/administrators', verifyToken);
 
-// Starten des Servers
-app.listen(port, () => {
+// SSL Zertifikate laden
+const options = {
+    key: fs.readFileSync('./key.pem'),
+    cert: fs.readFileSync('./cert.pem')
+};
+
+// Starten des Servers mit HTTPS
+https.createServer(options, app).listen(port, () => {
     console.log(`Server running on ${port}`);
 });
