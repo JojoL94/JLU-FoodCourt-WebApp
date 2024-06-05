@@ -1,4 +1,9 @@
+# Preview
 [![Youtube Vorschau: https://youtu.be/OT2TnziHYQY](https://img.youtube.com/vi/OT2TnziHYQY&ab_channel=JohannesL/0.jpg)](https://www.youtube.com/watch?v=OT2TnziHYQY&ab_channel=JohannesL)
+
+# Setup Database
+No need for Setup. I am currently hosting the database on "Filess.io".
+
 # Setup Backend
 
 To setup the backend, cd into the backend directory and run:
