@@ -1,4 +1,4 @@
-[![IMAGE Vorschau](https://img.youtube.com/vi/OT2TnziHYQY&ab_channel=JohannesL/0.jpg)](https://www.youtube.com/watch?v=OT2TnziHYQY&ab_channel=JohannesL)
+[![Youtube Vorschau](https://img.youtube.com/vi/OT2TnziHYQY&ab_channel=JohannesL/0.jpg)](https://www.youtube.com/watch?v=OT2TnziHYQY&ab_channel=JohannesL)
 # Setup Backend
 
 To setup the backend, cd into the backend directory and run:
