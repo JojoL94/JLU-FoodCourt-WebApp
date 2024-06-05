@@ -1,28 +1,29 @@
-import express from "express";
-import db from "./config/database.js";
-import administratorRoutes from "./routes/administratorRoutes.js";
-import dishRoutes from "./routes/dishRoutes.js";
-import beverageRoutes from "./routes/beverageRoutes.js";
-import restaurantownerRoutes from "./routes/restaurantownerRoutes.js";
-import dishtypeRoutes from "./routes/dishtypeRoutes.js";
-import menuRoutes from "./routes/menuRoutes.js";
-import beveragetypeRoutes from "./routes/beveragetypeRoutes.js";
-import drinksmenuRoutes from "./routes/drinksmenuRoutes.js";
-import dish_allergentypeRoutes from "./routes/dish_allergentypeRoutes.js";
-import allergentypeRoutes from "./routes/allergentypeRoutes.js";
-import eventRoutes from "./routes/eventRoutes.js";
-import cors from "cors";
-import dotenv from "dotenv";
-import cookieParser from "cookie-parser";
-dotenv.config();
-import authRoutes from "./routes/authRoutes.js";
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
-import { verifyToken } from './middleware/VerifyToken.js'; // Hier ist der korrekte Importpfad
+
+import db from './config/database.js';
+import administratorRoutes from './routes/administratorRoutes.js';
+import dishRoutes from './routes/dishRoutes.js';
+import beverageRoutes from './routes/beverageRoutes.js';
+import restaurantownerRoutes from './routes/restaurantownerRoutes.js';
+import dishtypeRoutes from './routes/dishtypeRoutes.js';
+import menuRoutes from './routes/menuRoutes.js';
+import beveragetypeRoutes from './routes/beveragetypeRoutes.js';
+import drinksmenuRoutes from './routes/drinksmenuRoutes.js';
+import dish_allergentypeRoutes from './routes/dish_allergentypeRoutes.js';
+import allergentypeRoutes from './routes/allergentypeRoutes.js';
+import eventRoutes from './routes/eventRoutes.js';
+import authRoutes from './routes/authRoutes.js';
+import { verifyToken } from './middleware/VerifyToken.js';
+
+dotenv.config();
 
 const port = process.env.PORT || 3010;
 const app = express();
 
-// Datenbankverbindung herstellen
 (async () => {
     try {
         await db.authenticate();
