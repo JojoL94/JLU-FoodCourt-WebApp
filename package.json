@@ -1,6 +1,6 @@
 {
     "scripts": {
         "railway-prebuild": "cd frontend && npm install && npm run build && cd .. && cd backend && npm install",
-        "start": "node backend/index.js"
+        "start": "cd backend && npm start"
     }
 }
