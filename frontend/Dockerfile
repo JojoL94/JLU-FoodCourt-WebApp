@@ -1,5 +1,5 @@
 ﻿# Verwende ein Node.js-Image als Basis
-FROM node:14
+FROM node:18 as build
 
 # Erstelle ein Verzeichnis für die Anwendung
 WORKDIR /app
@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Installiere die Abhängigkeiten
-RUN npm install
+RUN npm install --legacy-peer-deps
 
 # Kopiere den Rest des Anwendungscodes
 COPY . .
@@ -18,7 +18,7 @@ RUN npm run build
 
 # Installiere ein einfaches Webserver-Image für die Bereitstellung
 FROM nginx:alpine
-COPY --from=0 /app/build /usr/share/nginx/html
+COPY --from=build /app/build /usr/share/nginx/html
 
 # Exponiere den Port, den die Anwendung nutzt (z.B., 80)
 EXPOSE 80

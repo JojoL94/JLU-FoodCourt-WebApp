@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "railway-prebuild": "cd frontend && npm install && npm run build && cd .. && cd backend && npm install",
+        "railway-prebuild": "cd frontend && npm install --legacy-peer-deps && npm run build && cd ../backend && npm install --legacy-peer-deps",
         "start": "cd backend && npm start"
     }
 }
