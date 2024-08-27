@@ -1,5 +1,5 @@
 # Preview
-[![Youtube Vorschau: https://youtu.be/OT2TnziHYQY](https://img.youtube.com/vi/OT2TnziHYQY&ab_channel=JohannesL/0.jpg)](https://www.youtube.com/watch?v=OT2TnziHYQY&ab_channel=JohannesL)
+https://www.youtube.com/watch?v=LyRqCnJVJd4
 
 # Setup database
 No need for setup. I currently host the database on ‘Filess.io’.
