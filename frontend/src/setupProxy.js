@@ -2,7 +2,7 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 
 module.exports = function (app) {
     app.use('/api', createProxyMiddleware({
-        target: 'https://jlu-speisekarten.onrender.com',
+        target: 'https://jlu-speisekarten-webapp.onrender.com',
         changeOrigin: true,
         secure: false, // Setzt die Überprüfung des Zertifikats außer Kraft
         logLevel: 'debug', // Hinzufügen von Logs
