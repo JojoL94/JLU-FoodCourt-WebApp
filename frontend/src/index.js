@@ -6,6 +6,10 @@ import 'bulma/css/bulma.css';
 
 import { AuthProvider } from './hooks'
 
+import{disableReactDevTools} from "@fvilers/disable-react-devtools";
+
+if (process.env.NODE_ENV === 'production') disableReactDevTools()
+
 ReactDOM.render(
   <AuthProvider>
     <React.StrictMode>

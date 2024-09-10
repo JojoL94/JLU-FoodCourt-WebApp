@@ -1,8 +1,8 @@
 //Database connection
 import { Sequelize } from "sequelize";
 
-const db = new Sequelize('jluFoodCourtWebApp_tornwiseto', 'jluFoodCourtWebApp_tornwiseto', 'b62e31993ded7f315285cb1387dd0e750aeb2386', {
-    host: "tlm.h.filess.io",
+const db = new Sequelize('Speisen_couldleast', 'Speisen_couldleast', 'f69b53ecb72f439b65978e3b4ab82fb1ab990870', {
+    host: "h16.h.filess.io",
     port: "3305",
     dialect: 'mariadb',
     dialectOptions: {
