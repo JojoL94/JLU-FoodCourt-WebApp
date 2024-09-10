@@ -3,6 +3,7 @@ https://www.youtube.com/watch?v=LyRqCnJVJd4
 
 # Setup database
 SQL Query in backend/config/speisen_getraenke_db_query
+
 Database Sequelize in backend/config/database.js
 
 # Setup Backend
