@@ -2,7 +2,8 @@
 https://www.youtube.com/watch?v=LyRqCnJVJd4
 
 # Setup database
-No need for setup. I currently host the database on ‘Filess.io’.
+SQL Query in backend/config/speisen_getraenke_db_query
+Database Sequelize in backend/config/database.js
 
 # Setup Backend
 
